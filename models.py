@@ -101,10 +101,9 @@ class HSV():
     def __str__(self):
         return f'{round(self._hue)}°, {round(self._saturation)}%, {round(self._value)}%'
 
-    # TODO
     def to_rgb(self):
         c = (self._value / 100) * (self._saturation / 100)
-        x = c * (1 - abs((self._hue * 60) % 2 - 1))
+        x = c * (1 - abs((self._hue / 60) % 2 - 1))
         m = (self._value / 100) - c
 
         r1 = g1 = b1 = 0
