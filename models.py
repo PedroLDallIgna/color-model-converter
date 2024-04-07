@@ -1,4 +1,3 @@
-
 class RGB():
     def __init__(self, R=0, G=0, B=0):
         self._red = R
@@ -7,11 +6,22 @@ class RGB():
 
     def set_values(self):
         self._red = int(input('R: '))
+        while self._red < 0 or self._red > 255:
+            print("The value must be between 0 and 255")
+            self._red = int(input('R: '))
+
         self._green = int(input('G: '))
+        while self._green < 0 or self._blue > 255:
+            print("The value must be between 0 and 255")
+            self._green = int(input('G: '))
+
         self._blue = int(input('B: '))
+        while self._blue < 0 or self._blue > 255:
+            print("The value must be between 0 and 255")
+            self._blue = int(input('B: '))
     
     def __str__(self):
-        return f'{round(self._red)}, {round(self._green)}, {round(self._blue)}'
+        return f'RGB: {round(self._red)}, {round(self._green)}, {round(self._blue)}'
 
     def to_cmyk(self):
         r1 = self._red / 255
