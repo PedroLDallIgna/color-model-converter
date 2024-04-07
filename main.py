@@ -24,14 +24,26 @@ def hsv_to_rgb():
     rgb = hsv.to_rgb()
     print(rgb)
 
+def normalize_rgb():
+    rgb = RGB()
+    rgb.set_values()
+    rgb.normalize()
+    print(rgb)
+
+def rgb_to_grayscale():
+    rgb = RGB()
+    rgb.set_values()
+    rgb.to_grayscale()
+    print(rgb)
+
 def main():
     print('''
 [1] RGB to CMYK
 [2] CMYK to RGB
 [3] RGB to HSV
 [4] HSV to RGB
-[5] CMYK to HSV
-[6] HSV to CMYK
+[5] Normalize RGB
+[6] RGB to Grayscale
     ''')
 
     conversion = input('select a conversion: ')
@@ -40,7 +52,9 @@ def main():
         '1': rgb_to_cmyk,
         '2': cmyk_to_rgb,
         '3': rgb_to_hsv,
-        '4': hsv_to_rgb
+        '4': hsv_to_rgb,
+        '5': normalize_rgb,
+        '6': rgb_to_grayscale
     }
 
     conversions[conversion]()
