@@ -118,14 +118,6 @@ class CMYK():
         rgb = RGB(r, g, b)
         return rgb
 
-    # TODO
-    def to_hsv(self):
-        h = 0
-        s = 0
-        v = 0
-        hsv = HSV(h, s, v)
-        return hsv
-
 class HSV():
     def __init__(self, H=0, S=0, V=0):
         self._hue = H
@@ -186,12 +178,3 @@ class HSV():
         
         rgb = RGB((r1 + m) * 255, (g1 + m) * 255, (b1 + m) * 255)
         return rgb
-
-    # TODO
-    def to_cmyk(self):
-        c = 0
-        m = 0
-        y = 0
-        k = 0
-        cmyk = CMYK(c, m, y, k)
-        return cmyk
