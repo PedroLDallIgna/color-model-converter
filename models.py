@@ -85,9 +85,24 @@ class CMYK():
 
     def set_values(self):
         self._cian = float(input('C: '))
+        while self._cian < 0 or self._cian > 100:
+            print("The value must be between 0 and 100")
+            self._cian = float(input('C: '))
+        
         self._magenta = float(input('M: '))
+        while self._magenta < 0 or self._magenta > 100:
+            print("The value must be between 0 and 100")
+            self._magenta = float(input('M: '))
+
         self._yellow = float(input('Y: '))
+        while self._yellow < 0 or self._yellow > 100:
+            print("The value must be between 0 and 100")
+            self._yellow = float(input('Y: '))
+
         self._key = float(input('K: '))
+        while self._key < 0 or self._key > 100
+            print("The value must be between 0 and 100")
+            self._key = float(input('K: '))
 
     def __str__(self):
         return f'{round(self._cian * 100)}%, {round(self._magenta * 100)}%, {round(self._yellow * 100)}%, {round(self._key * 100)}%'
