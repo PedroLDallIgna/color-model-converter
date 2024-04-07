@@ -30,8 +30,6 @@ def main():
 [2] CMYK to RGB
 [3] RGB to HSV
 [4] HSV to RGB
-[5] CMYK to HSV
-[6] HSV to CMYK
     ''')
 
     conversion = input('select a conversion: ')

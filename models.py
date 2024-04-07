@@ -104,12 +104,12 @@ class HSV():
     # TODO
     def to_rgb(self):
         c = (self._value / 100) * (self._saturation / 100)
-        x = c * (1 - abs((self._hue * 60) % 2 - 1))
+        x = c * (1 - abs((self._hue / 60) % 2 - 1))
         m = (self._value / 100) - c
 
         r1 = g1 = b1 = 0
 
-        if (0 <= self._hue and self._hue < 60):
+        if (self._hue >= 0 and self._hue < 60):
             r1 = c
             g1 = x
             b1 = 0
