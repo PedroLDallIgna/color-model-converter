@@ -45,9 +45,6 @@ def main():
 [5] Normalize RGB
 [6] RGB to Grayscale
     ''')
-
-    conversion = input('Choose an action: ')
-
     conversions = {
         '1': rgb_to_cmyk,
         '2': cmyk_to_rgb,
@@ -57,7 +54,15 @@ def main():
         '6': rgb_to_grayscale
     }
 
-    conversions[conversion]()
+    try:
+        conversion = input('Choose an action: ')
+        while int(conversion) < 1 or int(conversion) > len(conversions.keys()):
+            print('Inalid action')
+            conversion = input('Choose an action: ')
+
+        conversions[conversion]()
+    except KeyboardInterrupt:
+        print("\nSaindo...")
 
 
 if __name__ == "__main__":
