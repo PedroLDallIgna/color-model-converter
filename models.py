@@ -57,7 +57,14 @@ class RGB():
 
         self._red = (self._red / total) * 255
         self._green = (self._green / total) * 255
-        self._blue = (self._blue / total) * 255 
+        self._blue = (self._blue / total) * 255
+
+    def to_grayscale(self):
+        avg = (self._red + self._green + self._blue) / 3
+
+        self._red = avg
+        self._green = avg
+        self._blue = avg
 
 class CMYK():
     def __init__(self, C=0, M=0, Y=0, K=0):
@@ -108,7 +115,6 @@ class HSV():
     def __str__(self):
         return f'{round(self._hue)}°, {round(self._saturation)}%, {round(self._value)}%'
 
-    # TODO
     def to_rgb(self):
         c = (self._value / 100) * (self._saturation / 100)
         x = c * (1 - abs((self._hue / 60) % 2 - 1))
