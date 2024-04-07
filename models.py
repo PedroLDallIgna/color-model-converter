@@ -134,8 +134,20 @@ class HSV():
 
     def set_values(self):
         self._hue = float(input('H: '))
+        while self._hue < 0 or self._hue > 359:
+            print("The value must be between 0 and 359")
+            self._hue = float(input('H: '))
+
         self._saturation = float(input('S: '))
+        while self._saturation < 0 or self._saturation > 100:
+            print("The value must be between 0 and 100")
+            self._saturation = float(input('S: '))
+
         self._value = float(input('V: '))
+        while self._value < 0 or self.value > 100:
+            print("The value must be between 0 and 100")
+            self._value = float(input('V: '))
+
 
     def __str__(self):
         return f'{round(self._hue)}°, {round(self._saturation)}%, {round(self._value)}%'
