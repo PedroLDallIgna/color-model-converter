@@ -46,7 +46,7 @@ def main():
 [6] RGB to Grayscale
     ''')
 
-    conversion = input('select a conversion: ')
+    conversion = input('Choose an action: ')
 
     conversions = {
         '1': rgb_to_cmyk,

@@ -100,12 +100,12 @@ class CMYK():
             self._yellow = float(input('Y: '))
 
         self._key = float(input('K: '))
-        while self._key < 0 or self._key > 100
+        while self._key < 0 or self._key > 100:
             print("The value must be between 0 and 100")
             self._key = float(input('K: '))
 
     def __str__(self):
-        return f'{round(self._cian * 100)}%, {round(self._magenta * 100)}%, {round(self._yellow * 100)}%, {round(self._key * 100)}%'
+        return f'CMYK: {round(self._cian * 100)}%, {round(self._magenta * 100)}%, {round(self._yellow * 100)}%, {round(self._key * 100)}%'
 
     def to_rgb(self):
         c = self._cian / 100
@@ -142,7 +142,7 @@ class HSV():
 
 
     def __str__(self):
-        return f'{round(self._hue)}°, {round(self._saturation)}%, {round(self._value)}%'
+        return f'HSV: {round(self._hue)}°, {round(self._saturation)}%, {round(self._value)}%'
 
     def to_rgb(self):
         c = (self._value / 100) * (self._saturation / 100)
