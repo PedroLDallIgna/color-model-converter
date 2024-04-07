@@ -52,6 +52,13 @@ class RGB():
         hsv = HSV(h, s, v)
         return hsv
 
+    def normalize(self):
+        total = (self._red + self._green + self._blue)
+
+        self._red = (self._red / total) * 255
+        self._green = (self._green / total) * 255
+        self._blue = (self._blue / total) * 255 
+
 class CMYK():
     def __init__(self, C=0, M=0, Y=0, K=0):
         self._cian = C
