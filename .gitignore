@@ -21,6 +21,7 @@ cucumber-report.json
 **/.vscode test/**
 **/.vscode-smoke/**
 **/.venv*/
+**/.env/
 port.txt
 precommit.hook
 python_files/lib/**
@@ -48,3 +49,4 @@ dist/**
 *.xlf
 package.nls.*.json
 l10n/
+output
