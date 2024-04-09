@@ -61,6 +61,8 @@ def main():
             conversion = input('Choose an action: ')
 
         conversions[conversion]()
+
+        input('\nPress any key to exit...')
     except KeyboardInterrupt:
         print("\nSaindo...")
 
